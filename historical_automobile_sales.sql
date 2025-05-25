@@ -77,3 +77,12 @@ GROUP BY year;
 SELECT max(automobile_sales )
 FROM historical_automobile_sales
 WHERE automobile_sales < (SELECT max(automobile_sales) FROM historical_automobile_sales);
+
+# 13. Recession checking by using the case for 1 and 0 values
+SELECT year,
+CASE
+	WHEN recession = 1 THEN 'YES'
+    WHEN recession = 0 THEN 'NO' 
+END AS 'Recession (Yes/ No) '
+FROM historical_automobile_sales;
+ 
