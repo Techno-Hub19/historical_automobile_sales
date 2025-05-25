@@ -76,7 +76,9 @@ GROUP BY year;
 # 12. Second Highest Automobile_Sales
 SELECT max(automobile_sales )
 FROM historical_automobile_sales
-WHERE automobile_sales < (SELECT max(automobile_sales) FROM historical_automobile_sales);
+WHERE automobile_sales < 
+	(SELECT max(automobile_sales) 
+		FROM historical_automobile_sales);
 
 # 13. Recession checking by using the case for 1 and 0 values
 SELECT year,
